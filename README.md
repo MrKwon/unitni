@@ -13,5 +13,5 @@
 * Server  - *Undefined*
 
 #### 2019-10-29
-1. App intro part design 
-2. Views Component design
+1. App intro part design  : -ing
+2. Views Component design : -ing
