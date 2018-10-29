@@ -2,8 +2,8 @@
 
 ### Repository Structure
 
-* All code path       : /tdip
-* All imgfile path    : /tdip/img
+* All app code path : /tdip/app
+* All img file path : /tdip/img
 * Reference about app : [Wiki](https://github.com/MrKwon/tdip/wiki)
 
 ### Frameworks
