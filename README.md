@@ -4,7 +4,6 @@
 
 * All code path       : /tdip
 * All imgfile path    : /tdip/img
-
 * Reference about app : [Wiki](https://github.com/MrKwon/tdip/wiki)
 
 ### Frameworks
