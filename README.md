@@ -12,6 +12,10 @@
 * Node.js - Backend
 * Server  - *Undefined*
 
+### Modules
+
+* Sequelize - managing user infos, managing tdip infos etc. related with DB
+
 #### 2019-10-29
 1. App intro part design  : -ing
 2. Views Component design : -ing
