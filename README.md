@@ -1,4 +1,4 @@
-# CEOS 팀 프로젝트 띱
+# CEOS 팀 프로젝트 띱 개발 GitHub Repository
 
 ### Repository Structure
 
