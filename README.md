@@ -1,4 +1,6 @@
-# CEOS 팀 프로젝트 띱 개발 GitHub Repository
+# CEOS 팀 프로젝트 unitni 개발 GitHub Repository
+
+중간에 변경사항이 있어서 tdip에서 unitni로 바꿈.. 레포지토리명을 바꾸는 방법이 있으려나..
 
 ### Repository Structure
 
@@ -14,7 +16,7 @@
 
 ### Modules
 
-* Sequelize - managing user infos, managing tdip infos etc. related with DB
+* Sequelize.js - managing user infos, managing unitni infos etc. related with DB
 
 #### Dev log
 [Wiki](https://github.com/MrKwon/tdip/wiki/Dev-log)
