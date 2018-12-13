@@ -21,6 +21,8 @@
 </template>
 
 <script>
+import AuthService from '@/services/AuthService'
+
 export default {
   data () {
     return {
@@ -28,14 +30,13 @@ export default {
       password: ''
     }
   },
-  watch: {
-    email (value) {
-      console.log('email has changed', value)
-    }
-  },
   methods: {
-    register () {
-      console.log('register button was clicked', this.email, this.password)
+    async register () {
+      const response = await AuthService.register({
+        email: this.email,
+        password: this.password
+      })
+      console.log(response.data) // need to delete
     }
   }
 }
