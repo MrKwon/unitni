@@ -1,26 +1,37 @@
 <template>
-  <div>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <h1>Register</h1>
-    <input
-      type="email"
-      name="email"
-      v-model="email"
-      placeholder="email" />
-    <br>
-    <input
-      type="password"
-      name="password"
-      v-model="password"
-      placeholder="password" />
-    <br>
-    <button
-      @click="register">
-      Register
-    </button>
-  </div>
+  <v-layout row>
+    <v-flex>
+      <div class="white elevation-2">
+        <v-toolbar flat dense color="#f7a9a9" dark>
+          <v-toolbar-title>회원가입</v-toolbar-title>
+        </v-toolbar>
+        <div class="pl-4 pr-4 pt-2 pb-2">
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+          <v-text-field
+            label="email"
+            color="#f7a9a9"
+            v-model="email" />
+          <v-text-field
+            label="password"
+            color="#f7a9a9"
+            v-model="password" />
+          <br>
+          <br>
+          <div class="error" v-html="error" />
+          <br>
+          <br>
+          <v-btn
+            class="register_btn"
+            color="#f7a9a9"
+            @click="register">
+            Register
+          </v-btn>
+        </div>
+      </div>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
@@ -30,20 +41,33 @@ export default {
   data () {
     return {
       email: '',
-      password: ''
+      password: '',
+      error: null
     }
   },
   methods: {
     async register () {
-      const response = await AuthService.register({
-        email: this.email,
-        password: this.password
-      })
-      console.log(response.data) // need to delete
+      try {
+        console.log(this.email)
+        console.log(this.password)
+        await AuthService.register({
+          email: this.email,
+          password: this.password
+        })
+      } catch (error) {
+        this.error = error.response.data.error
+      }
     }
   }
 }
 </script>
 
 <style scoped>
+.error {
+  color: red;
+}
+
+.register_btn {
+  color: white;
+}
 </style>
