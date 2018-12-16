@@ -1,6 +1,6 @@
 # client
 
-> a ceos project for providing university's info easier than now
+> unitni for ceos team project to provide school informations easier
 
 ## Build Setup
 
