@@ -4,8 +4,8 @@
 
 ### Repository Structure
 
-* All app code path : [/unitni/app](https://github.com/MrKwon/unitni/tree/master/app)
-* All img file path : [/unitni/img](https://github.com/MrKwon/unitni/tree/master/img)
+* All app code path : [\unitni\app](https://github.com/MrKwon/unitni/tree/master/app)
+* All img file path : [\unitni\img](https://github.com/MrKwon/unitni/tree/master/img)
 * App Dev Reference : [Wiki](https://github.com/MrKwon/unitni/wiki)
 
 ### Frameworks
@@ -17,6 +17,31 @@
 ### Modules
 
 * Sequelize.js - managing user infos, managing unitni infos etc. related with DB
+
+### How to run
+
+#### \unitni\app\client
+Firstable, install all packages with following command
+```
+npm i
+```
+
+Next, dev mode is
+```
+npm run dev
+```
+
+#### \unitni\app\server
+This is same as **client**
+Firstable, install all packages with following command
+```
+npm i
+```
+
+Next,
+```
+npm start
+```
 
 #### Dev log
 [Wiki](https://github.com/MrKwon/unitni/wiki/Dev-log)
