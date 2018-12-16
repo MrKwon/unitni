@@ -2,7 +2,7 @@
   <v-layout row>
     <v-flex>
       <div class="white elevation-2">
-        <v-toolbar flat dense color="#f7a9a9" dark>
+        <v-toolbar flat dense color="#f7a9a9">
           <v-toolbar-title>회원가입</v-toolbar-title>
         </v-toolbar>
         <div class="pl-4 pr-4 pt-2 pb-2">
@@ -10,23 +10,25 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
           <v-text-field
-            label="email"
+            label="이메일"
             color="#f7a9a9"
             v-model="email" />
           <v-text-field
-            label="password"
+            label="비밀번호"
             color="#f7a9a9"
             v-model="password" />
           <br>
           <br>
-          <div class="error" v-html="error" />
+          <div
+            class="error"
+            v-html="error" />
           <br>
           <br>
           <v-btn
             class="register_btn"
             color="#f7a9a9"
             @click="register">
-            Register
+            회원가입
           </v-btn>
         </div>
       </div>
