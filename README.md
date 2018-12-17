@@ -14,6 +14,8 @@
 * Node.js - Backend
 * Server  - *Undefined*
 
+* OS - Linux Ubuntu LTS 18.
+
 ### Modules
 
 * Sequelize.js - managing user infos, managing unitni infos etc. related with DB
