@@ -1,18 +1,22 @@
 <template>
   <div id="app">
-    <!-- <page-header/> -->
+    <page-header/>
     <!-- <img src="./assets/logo.png"> -->
     <router-view/>
+    <bottom-nav/>
   </div>
 </template>
 
 <script>
-// import PageHeader from '@/components/Header.vue'
+import PageHeader from '@/components/PageHeader.vue'
+import BottomNav from '@/components/BottomNav.vue'
+
 export default {
-  name: 'App'
-  // components: {
-  //   PageHeader
-  // }
+  name: 'App',
+  components: {
+    'page-header': PageHeader,
+    'bottom-nav': BottomNav
+  }
 }
 </script>
 

@@ -5,7 +5,7 @@
         <v-toolbar flat dense color="#f7a9a9">
           <v-toolbar-title>회원가입</v-toolbar-title>
         </v-toolbar>
-        <div class="pl-4 pr-4 pt-2 pb-2">
+        <div class="pl-4 pr-4 pt-4 pb-4">
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -50,8 +50,6 @@ export default {
   methods: {
     async register () {
       try {
-        console.log(this.email)
-        console.log(this.password)
         await AuthService.register({
           email: this.email,
           password: this.password

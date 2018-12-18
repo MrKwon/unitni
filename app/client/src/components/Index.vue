@@ -1,5 +1,8 @@
 <template>
-  <div class="background">
+  <div>
+    <img
+      src="../assets/background.jpg"
+      width="100%" />
   </div>
 </template>
 
@@ -10,7 +13,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.background {
-  background-image: url('../assets/background.jpg')
-}
 </style>
