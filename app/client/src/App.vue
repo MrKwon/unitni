@@ -1,23 +1,22 @@
 <template>
   <div id="app">
-    <page-header/>
-    <!-- <img src="./assets/logo.png"> -->
-    <router-view/>
-    <bottom-nav/>
+    <!-- <page-header /> -->
+    <router-view />
+    <!-- <bottom-nav /> -->
   </div>
 </template>
 
 <script>
-import PageHeader from '@/components/PageHeader.vue'
-import BottomNav from '@/components/BottomNav.vue'
+// import PageHeader from '@/components/PageHeader.vue'
+// import BottomNav from '@/components/BottomNav.vue'
 
-export default {
-  name: 'App',
-  components: {
-    'page-header': PageHeader,
-    'bottom-nav': BottomNav
-  }
-}
+// export default {
+//   name: 'App',
+//   components: {
+//     'page-header': PageHeader,
+//     'bottom-nav': BottomNav
+//   }
+// }
 </script>
 
 <style>
@@ -36,5 +35,9 @@ export default {
 
 .v-input__slot {
   border-bottom: 1px solid #f7a9a9;
+}
+
+.v-btn__content {
+  color: white;
 }
 </style>
