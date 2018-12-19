@@ -1,22 +1,17 @@
 <template>
   <div id="app">
-    <!-- <page-header /> -->
     <router-view />
-    <!-- <bottom-nav /> -->
+    <!-- <v-app>
+      <v-content>
+        <v-container>
+          <router-view />
+        </v-container>
+      </v-content>
+    </v-app> -->
   </div>
 </template>
 
 <script>
-// import PageHeader from '@/components/PageHeader.vue'
-// import BottomNav from '@/components/BottomNav.vue'
-
-// export default {
-//   name: 'App',
-//   components: {
-//     'page-header': PageHeader,
-//     'bottom-nav': BottomNav
-//   }
-// }
 </script>
 
 <style>

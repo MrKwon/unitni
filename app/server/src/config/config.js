@@ -7,5 +7,8 @@ module.exports = {
     host: process.env.DB_HOST || '127.0.0.1',
     dialect: process.env.DB_DIAL || 'mysql',
     operatorsAliases: false
+  },
+  authentication: {
+    jwtSecret: process.env.JWT_SECRET || 'secret'
   }
 }

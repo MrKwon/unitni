@@ -1,9 +1,10 @@
 <template>
   <v-layout row>
+    <page-header />
     <v-flex>
       <div class="white elevation-2">
         <v-toolbar flat dense color="#f7a9a9">
-          <v-toolbar-title>회원가입</v-toolbar-title>
+          <v-toolbar-title align="center">회원가입</v-toolbar-title>
         </v-toolbar>
         <div class="pl-4 pr-4 pt-4 pb-4">
           <meta
@@ -25,6 +26,7 @@
           <br>
           <br>
           <v-btn
+            round
             class="register_btn"
             color="#f7a9a9"
             @click="register">
@@ -38,6 +40,7 @@
 
 <script>
 import AuthService from '@/services/AuthService'
+import PageHeader from '@/components/PageHeader.vue'
 
 export default {
   data () {
@@ -46,6 +49,9 @@ export default {
       password: '',
       error: null
     }
+  },
+  components: {
+    PageHeader
   },
   methods: {
     async register () {
@@ -65,6 +71,8 @@ export default {
 <style scoped>
 .error {
   color: red;
+    background-color: white !important;
+    border-color: yellow !important;
 }
 
 .register_btn {

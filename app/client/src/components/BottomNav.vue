@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="headline text-xs-center pa-5">
+    <div>
       <div v-if="selected === 'myinfo'">
         <my-info />
       </div>
