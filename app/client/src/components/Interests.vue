@@ -21,7 +21,7 @@
 export default {
   data () {
     return {
-      nickname: '닉네임'
+      nickname: this.$store.state.user.nick
     }
   }
 }

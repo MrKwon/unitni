@@ -17,10 +17,11 @@
 <script>
 export default {
   data () {
+    console.log('스테이트', this.$store.state.user)
     return {
-      nickname: '닉네임',
-      name: '이름',
-      email: 'example@unitni.com',
+      nickname: this.$store.state.user.nick,
+      name: this.$store.state.user.name,
+      email: this.$store.state.user.email,
       school: '유니티니대학교',
       college: '경상대학',
       depart: '경영학과'

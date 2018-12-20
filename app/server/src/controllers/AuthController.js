@@ -13,12 +13,13 @@ function jwtSignUser (user) {
 module.exports = {
   async register (req, res) {
     try {
-      const { email, password, name } = req.body
+      const { email, password, name, nick } = req.body
       const hash = await bcrypt.hash(password, 12)
       const user = await User.create({
         email,
         password: hash,
-        name
+        name,
+        nick
       })
       const userJson = user.toJSON()
       res.send({
@@ -26,7 +27,6 @@ module.exports = {
         token: jwtSignUser(userJson)
       })
     } catch (err) {
-      console.log(err)
       res.status(400).send({
         error: '이 이메일 주소는 이미 사용 중 입니다.'
       })

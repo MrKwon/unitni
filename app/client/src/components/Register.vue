@@ -27,6 +27,10 @@
               label="이름"
               color="#f7a9a9"
               v-model="name" />
+            <v-text-field
+              label="닉네임"
+              color="#f7a9a9"
+              v-model="nick" />
           </form>
           <br>
           <br>
@@ -58,6 +62,7 @@ export default {
       email: '',
       password: '',
       name: '',
+      nick: '',
       error: null
     }
   },
@@ -70,10 +75,12 @@ export default {
         const response = await AuthService.register({
           email: this.email,
           password: this.password,
-          name: this.name
+          name: this.name,
+          nick: this.nick
         })
         this.$store.dispatch('setToken', response.data.token)
         this.$store.dispatch('setUser', response.data.user)
+        this.$router.push('main')
       } catch (error) {
         this.error = error.response.data.error
       }

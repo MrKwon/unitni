@@ -13,7 +13,8 @@
     >
       <img
         class= "avatar"
-        src="../assets/no_user_img_hq.png" alt="avatar">
+        src="../assets/no_user_img_hq.png"
+        alt="avatar">
     </v-avatar>
     <section
       class= "mid elevation-3"

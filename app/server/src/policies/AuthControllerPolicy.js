@@ -8,7 +8,8 @@ module.exports = {
       password: Joi.string().regex(
         new RegExp('^[a-zA-Z0-9]{8,32}$')
       ),
-      name: Joi.string().min(2).max(10)
+      name: Joi.string().min(2).max(10),
+      nick: Joi.string().min(1).max(10)
     }
 
     const { error, value } = Joi.validate(req.body, schema)
@@ -39,6 +40,11 @@ module.exports = {
         case 'name':
           res.status(400).send({
             error: '이름을 정확히 입력해주세요.'
+          })
+          break
+        case 'nick':
+          res.status(400).send({
+            error: '닉네임을 입력해주세요. [최소 1문자, 최대 10문자]'
           })
           break
         default:
