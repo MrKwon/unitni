@@ -16,6 +16,7 @@
             v-model="email" />
           <v-text-field
             label="비밀번호"
+            type="password"
             color="#f7a9a9"
             v-model="password" />
           <br>
@@ -56,10 +57,12 @@ export default {
   methods: {
     async login () {
       try {
-        await AuthService.login({
+        const response = await AuthService.login({
           email: this.email,
           password: this.password
         })
+        this.$store.dispatch('setToken', response.data.token)
+        this.$store.dispatch('setUser', response.data.user)
       } catch (error) {
         this.error = error.response.data.error
       }

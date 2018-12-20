@@ -18,44 +18,27 @@
     <section
       class= "mid elevation-3"
     >
-    <div class= "info-box">
-      <div>
-        <span class= "nickname">{{nickname}}</span>
-        <span class= "name">({{name}})</span>
-      </div>
-      <span class= "email">{{email}}</span>
-      <hr class="mt-1 mb-1" align="center" width="20px" color="#f59597" noshade />
-      <span class= "school">{{school}}</span>
-      <div class= "coll-depart">
-        <span class= "college">{{college}}</span>
-        <span class= "depart">{{depart}}</span>
-      </div>
-    </div>
+      <need-login v-if="!$store.state.isUserLoggedIn"/>
+      <user-infos v-if="$store.state.isUserLoggedIn"/>
     </section>
     <section
       class= "bottom pr-2 pl-2"
     >
-      <interests />
+      <interests v-if="$store.state.isUserLoggedIn"/>
     </section>
   </div>
 </template>
 
 <script>
 import Interests from '@/components/Interests'
+import UserInfos from '@/components/UserInfos'
+import NeedLogin from '@/components/NeedLogin'
 
 export default {
-  data () {
-    return {
-      nickname: '닉네임',
-      name: '이름',
-      email: 'example@unitni.com',
-      school: '유니티니대학교',
-      college: '경상대학',
-      depart: '경영학과'
-    }
-  },
   components: {
-    Interests
+    Interests,
+    UserInfos,
+    NeedLogin
   }
 }
 </script>
@@ -89,25 +72,6 @@ html, body {
   width: 100%;
   height: 250px;
   background-color: white;
-}
-.info-box {
-  position: relative;
-  top: 105px;
-  font-size: 22px;
-  color: #6e6e6e;
-}
-.nickname {
-  color: #f59597;
-  font-weight: bold;
-}
-.email {
-  font-size: 20px;
-}
-.school {
-  font-weight: 500;
-}
-.coll-depart {
-  font-size: 20px;
 }
 .bottom {
   position: relative;

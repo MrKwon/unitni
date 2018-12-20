@@ -10,14 +10,24 @@
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-          <v-text-field
-            label="이메일"
-            color="#f7a9a9"
-            v-model="email" />
-          <v-text-field
-            label="비밀번호"
-            color="#f7a9a9"
-            v-model="password" />
+          <form
+            name="unitni-form"
+            autocomplete="off">
+            <v-text-field
+              label="이메일"
+              color="#f7a9a9"
+              v-model="email" />
+            <v-text-field
+              label="비밀번호"
+              type="password"
+              color="#f7a9a9"
+              v-model="password"
+              autocomplete="new-password" />
+            <v-text-field
+              label="이름"
+              color="#f7a9a9"
+              v-model="name" />
+          </form>
           <br>
           <br>
           <div
@@ -47,6 +57,7 @@ export default {
     return {
       email: '',
       password: '',
+      name: '',
       error: null
     }
   },
@@ -56,10 +67,13 @@ export default {
   methods: {
     async register () {
       try {
-        await AuthService.register({
+        const response = await AuthService.register({
           email: this.email,
-          password: this.password
+          password: this.password,
+          name: this.name
         })
+        this.$store.dispatch('setToken', response.data.token)
+        this.$store.dispatch('setUser', response.data.user)
       } catch (error) {
         this.error = error.response.data.error
       }

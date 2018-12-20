@@ -5,8 +5,7 @@
     color="#f59597"
     height="55">
     <v-toolbar-title class="toolbar-title-icon">
-      <div class= "mt-2"
-        @click="navigateTo({ name: 'Index' })">
+      <div class= "mt-2">
         <img
           src="../assets/white_logo_resize.png"
           height="33"
@@ -18,11 +17,6 @@
 
 <script>
 export default {
-  methods: {
-    navigateTo (route) {
-      this.$router.push(route)
-    }
-  }
 }
 </script>
 
