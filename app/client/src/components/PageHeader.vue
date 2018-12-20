@@ -5,11 +5,11 @@
     color="#f59597"
     height="55">
     <v-toolbar-title class="toolbar-title-icon">
-      <div
+      <div class= "mt-2"
         @click="navigateTo({ name: 'Index' })">
         <img
           src="../assets/white_logo_resize.png"
-          height="40"
+          height="33"
           align="center"/>
       </div>
     </v-toolbar-title>
