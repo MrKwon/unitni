@@ -2,11 +2,13 @@ const Joi = require('joi')
 
 module.exports = {
   register (req, res, next) {
+    console.log(req.body.email, req.body.password)
     const schema = {
       email: Joi.string().email(),
       password: Joi.string().regex(
         new RegExp('^[a-zA-Z0-9]{8,32}$')
-      )
+      ),
+      name: Joi.string().min(2).max(10)
     }
 
     const { error, value } = Joi.validate(req.body, schema)
@@ -34,9 +36,14 @@ module.exports = {
             `
           })
           break
+        case 'name':
+          res.status(400).send({
+            error: '이름을 정확히 입력해주세요.'
+          })
+          break
         default:
           res.status(400).send({
-            error: '에러발생[400]'
+            error: '회원가입 중 에러 발생 [errorCode : 400]'
           })
       }
     } else {

@@ -1,5 +1,6 @@
 const { User } = require('../models')
 const jwt = require('jsonwebtoken')
+const bcrypt = require('bcryptjs')
 const config = require('../config/config')
 
 function jwtSignUser (user) {
@@ -12,13 +13,20 @@ function jwtSignUser (user) {
 module.exports = {
   async register (req, res) {
     try {
-      const user = await User.create(req.body)
+      const { email, password, name } = req.body
+      const hash = await bcrypt.hash(password, 12)
+      const user = await User.create({
+        email,
+        password: hash,
+        name
+      })
       const userJson = user.toJSON()
       res.send({
         user: userJson,
         token: jwtSignUser(userJson)
       })
     } catch (err) {
+      console.log(err)
       res.status(400).send({
         error: '이 이메일 주소는 이미 사용 중 입니다.'
       })
@@ -36,14 +44,14 @@ module.exports = {
 
       if (!user) {
         return res.status(403).send({
-          error: '이메일 비밀번호가 정확하지 않습니다.'
+          error: '로그인 정보가 정확하지 않습니다.'
         })
       }
 
-      const isPasswordValid = await user.comparePassword(password)
+      const isPasswordValid = await bcrypt.compare(password, user.password)
       if (!isPasswordValid) {
         return res.status(403).send({
-          error: '이메일 비밀번호가 정확하지 않습니다.'
+          error: '로그인 정보가 정확하지 않습니다.'
         })
       }
 

@@ -3,6 +3,10 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <img
+      class="main-logo"
+      src="../assets/unitnilogo.png">
+    <br>
     <v-btn
       round
       to='main'
@@ -28,14 +32,21 @@
   position: fixed;
   right: 0;
   top: 0;
-  background-image: url("../assets/background.jpg");
+  background-image: url("../assets/background.png");
   background-size: 100% 100%
+}
+
+.main-logo {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  top: 35%
 }
 
 .go-main-btn {
   width: 50%;
   position: relative;
-  top: 65%;
+  top: 45%;
 }
 
 </style>

@@ -12,6 +12,7 @@
   "description": "",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
+    "bcryptjs": "^2.4.3",
     "bluebird": "^3.5.3",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
@@ -21,6 +22,9 @@
     "morgan": "^1.9.1",
     "mysql2": "^1.6.4",
     "nodemon": "^1.18.7",
+    "passport": "^0.4.0",
+    "passport-kakao": "0.0.5",
+    "passport-local": "^1.0.0",
     "sequelize": "^4.42.0"
   },
   "devDependencies": {
