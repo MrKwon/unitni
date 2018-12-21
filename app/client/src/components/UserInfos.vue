@@ -8,8 +8,8 @@
     <hr class="mt-1 mb-1" align="center" width="20px" color="#f59597" noshade />
     <span class= "school">{{school}}</span>
     <div class= "coll-depart">
-      <span class= "college">{{college}}</span>
-      <span class= "depart">{{depart}}</span>
+      <span class= "college">{{college}}대학</span>
+      <span class= "depart">{{depart}}과</span>
     </div>
   </div>
 </template>
@@ -17,14 +17,13 @@
 <script>
 export default {
   data () {
-    console.log('스테이트', this.$store.state.user)
     return {
       nickname: this.$store.state.user.nick,
       name: this.$store.state.user.name,
       email: this.$store.state.user.email,
-      school: '유니티니대학교',
-      college: '경상대학',
-      depart: '경영학과'
+      school: this.$store.state.user.school,
+      college: this.$store.state.user.college,
+      depart: this.$store.state.user.depart
     }
   }
 }

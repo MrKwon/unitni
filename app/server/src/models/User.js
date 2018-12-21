@@ -17,6 +17,18 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING(15),
       allowNull: false // 필수 입력이지만 입력 안하면 이름이 자동으로 들어감
     },
+    school: {
+      type: DataTypes.STRING(20),
+      allowNull: false
+    },
+    college: {
+      type: DataTypes.STRING(20),
+      allowNull: false
+    },
+    depart: {
+      type: DataTypes.STRING(20),
+      allowNull: false
+    },
     provider: {
       type: DataTypes.STRING(10),
       allowNull: false,

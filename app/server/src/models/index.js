@@ -20,5 +20,10 @@ db.Sequelize = Sequelize
 // using table `Users` // MySQL
 db.User = require('./User')(sequelize, Sequelize)
 db.Post = require('./Post')(sequelize, Sequelize)
+db.Depart = require('./Depart')(sequelize, Sequelize)
+
+// User 1 : Depart 1 - 유저 한명은 Depart 한 곳에 소속되어 있음
+db.Depart.hasOne(db.User, { foreignKey: 'schoolinfo', sourceKey: 'id' })
+db.User.belongsTo(db.Depart, { foreignKey: 'schoolinfo', sourceKey: 'id' })
 
 module.exports = db

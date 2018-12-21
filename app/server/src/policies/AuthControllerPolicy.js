@@ -2,17 +2,21 @@ const Joi = require('joi')
 
 module.exports = {
   register (req, res, next) {
-    console.log(req.body.email, req.body.password)
     const schema = {
       email: Joi.string().email(),
       password: Joi.string().regex(
         new RegExp('^[a-zA-Z0-9]{8,32}$')
       ),
       name: Joi.string().min(2).max(10),
-      nick: Joi.string().min(1).max(10)
+      nick: Joi.string().min(1).max(10),
+      school: Joi.string().min(1),
+      college: Joi.string().min(1),
+      depart: Joi.string().min(1)
     }
 
     const { error, value } = Joi.validate(req.body, schema)
+
+    console.log(error)
 
     if (error) {
       switch (error.details[0].context.key) {
@@ -45,6 +49,21 @@ module.exports = {
         case 'nick':
           res.status(400).send({
             error: '닉네임을 입력해주세요. [최소 1문자, 최대 10문자]'
+          })
+          break
+        case 'school':
+          res.status(400).send({
+            error: '학교를 선택해주세요'
+          })
+          break
+        case 'college':
+          res.status(400).send({
+            error: '단과대를 선택해주세요'
+          })
+          break
+        case 'depart':
+          res.status(400).send({
+            error: '학과를 선택해주세요'
           })
           break
         default:

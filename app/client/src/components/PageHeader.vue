@@ -12,14 +12,6 @@
       </div>
     </v-toolbar-title>
     <img
-      class="login"
-      src="../assets/no_user_img_white.png"
-      height="33"
-      width="33"
-      align="right"
-      v-if= "!$store.state.isUserLoggedIn"
-      @click="navigateTo('login')"/>
-    <img
       class="logout"
       src="../assets/no_user_img_white.png"
       height="33"

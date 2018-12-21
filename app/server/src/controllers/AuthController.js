@@ -1,4 +1,4 @@
-const { User } = require('../models')
+const { User, Depart, Sequelize: { Op } } = require('../models')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const config = require('../config/config')
@@ -13,13 +13,23 @@ function jwtSignUser (user) {
 module.exports = {
   async register (req, res) {
     try {
-      const { email, password, name, nick } = req.body
+      const { email, password, name, nick, school, college, depart } = req.body
+      const schoolinfo = await Depart.findOne({
+        attributes: ['id'],
+        where: {
+          [Op.and]: [ { school: school }, { college: college }, { departs: depart } ]
+        }
+      })
       const hash = await bcrypt.hash(password, 12)
       const user = await User.create({
         email,
         password: hash,
         name,
-        nick
+        nick,
+        school,
+        college,
+        depart,
+        schoolinfo: schoolinfo.dataValues.id
       })
       const userJson = user.toJSON()
       res.send({
