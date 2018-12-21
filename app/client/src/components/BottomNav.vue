@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <div class="container">
       <div v-if="selected === 'myinfo'">
         <my-info />
       </div>
@@ -16,7 +16,7 @@
       :value="true"
       fixed
       color="#f59597"
-      height="55"
+      height="55px"
     >
       <v-btn
         color="white"

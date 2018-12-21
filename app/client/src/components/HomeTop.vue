@@ -17,7 +17,7 @@ export default {
     }
   }
 }
-</script>력
+</script>
 
 <style scoped>
 .content {

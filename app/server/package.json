@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/nodemon/bin/nodemon.js src/app.js --exec 'npm run lint && node'",
+    "start": "cross-env PORT=80 pm2 start src/app.js",
+    "dev": "./node_modules/nodemon/bin/nodemon.js src/app.js --exec 'npm run lint && node'",
     "lint": "./node_modules/.bin/eslint \"**/*.js\""
   },
   "keywords": [],
@@ -16,7 +17,11 @@
     "bluebird": "^3.5.3",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
+    "cross-env": "^5.2.0",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
+    "helmet": "^3.15.0",
+    "hpp": "^0.2.2",
     "joi": "^14.3.0",
     "jsonwebtoken": "^8.4.0",
     "morgan": "^1.9.1",
@@ -24,7 +29,9 @@
     "passport": "^0.4.0",
     "passport-kakao": "0.0.5",
     "passport-local": "^1.0.0",
-    "sequelize": "^4.42.0"
+    "pm2": "^3.2.4",
+    "sequelize": "^4.42.0",
+    "winston": "^3.1.0"
   },
   "devDependencies": {
     "eslint": "^5.10.0",

@@ -1,17 +1,17 @@
 <template>
-  <div class= "info-box">
+  <v-layout justify-center column class= "info-box">
     <div>
       <span class= "nickname">{{nickname}}</span>
       <span class= "name">({{name}})</span>
     </div>
     <span class= "email">{{email}}</span>
-    <hr class="mt-1 mb-1" align="center" width="20px" color="#f59597" noshade />
+    <hr class="hr mt-2 mb-1" width="6%" color="#f59597"/>
     <span class= "school">{{school}}</span>
     <div class= "coll-depart">
       <span class= "college">{{college}}대학</span>
       <span class= "depart">{{depart}}과</span>
     </div>
-  </div>
+  </v-layout>
 </template>
 
 <script>
@@ -35,6 +35,10 @@ export default {
   top: 105px;
   font-size: 22px;
   color: #6e6e6e;
+}
+.hr {
+  position: relative;
+  left: 47%;
 }
 .nickname {
   color: #f59597;

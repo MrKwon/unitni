@@ -5,14 +5,14 @@
     color="#f59597"
     height="55">
     <v-toolbar-title class="toolbar-title-icon">
-      <div class= "mt-2">
+      <v-layout class= "mt-2">
         <img
           src="../assets/white_logo_resize.png"
           height="33"/>
-      </div>
+      </v-layout>
     </v-toolbar-title>
     <img
-      class="logout"
+      class="logout mr-2"
       src="../assets/no_user_img_white.png"
       height="33"
       width="33"
@@ -52,14 +52,8 @@ export default {
   left: 0px;
   margin-left: 16px
 }
-.login {
-  position: absolute;
-  right: 0px;
-  margin-right: 16px
-}
 .logout {
   position: absolute;
   right: 0px;
-  margin-right: 16px
 }
 </style>

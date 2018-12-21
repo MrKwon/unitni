@@ -14,9 +14,7 @@ module.exports = {
       depart: Joi.string().min(1)
     }
 
-    const { error, value } = Joi.validate(req.body, schema)
-
-    console.log(error)
+    const { error } = Joi.validate(req.body, schema)
 
     if (error) {
       switch (error.details[0].context.key) {
@@ -72,7 +70,6 @@ module.exports = {
           })
       }
     } else {
-      console.log(value)
       next()
     }
   }

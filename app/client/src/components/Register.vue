@@ -93,9 +93,9 @@ function selector (college) {
   } else if (college === '경제') {
     return ['경제학']
   } else if (college === '자율전공학부') {
-    this.depart = ['자율전공']
+    return ['자율전공']
   } else if (college === '건축') {
-    this.depart = ['건축학', '실내건축학']
+    return ['건축학', '실내건축학']
   }
 }
 

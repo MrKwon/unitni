@@ -1,8 +1,5 @@
 <template>
   <div class="background">
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <img
       class="main-logo"
       src="../assets/unitnilogo.png">
@@ -34,6 +31,10 @@
   top: 0;
   background-image: url("../assets/background.png");
   background-size: 100% 100%
+}
+
+.v-btn__content {
+  color: white;
 }
 
 .main-logo {

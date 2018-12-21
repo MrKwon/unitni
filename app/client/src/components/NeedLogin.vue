@@ -1,5 +1,5 @@
 <template>
-  <v-app class= "info-box">
+  <v-layout column class= "info-box">
     <div class="mb-3">
     <span class>로그인을 하면</span>
     <br>
@@ -21,7 +21,7 @@
         로그인
       </v-btn>
     </v-content>
-  </v-app>
+  </v-layout>
 </template>
 
 <script>
@@ -32,7 +32,7 @@ export default {
 <style scoped>
 .info-box {
   position: relative;
-  top: 75px;
+  top: 120px;
   font-size: 20px;
   color: #6e6e6e;
 }

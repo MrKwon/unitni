@@ -29,7 +29,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     timestamps: false,
-    paranoid: false
+    paranoid: false,
+    charset: 'utf8',
+    collate: 'utf8_general_ci'
   })
 
   return Depart
