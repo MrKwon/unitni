@@ -34,13 +34,13 @@ npm run dev
 ```
 
 #### \unitni\app\server
-This is same as **client**
+This is same as **client** <br>
 Firstable, install all packages with following command
 ```
 npm i
 ```
 
-Next,
+Next, this command make run nodejs server with pm2 npm package
 ```
 npm start
 ```
