@@ -8,17 +8,20 @@
 * All img file path : [\unitni\img](https://github.com/MrKwon/unitni/tree/master/img)
 * App Dev Reference : [Wiki](https://github.com/MrKwon/unitni/wiki)
 
-### Frameworks
+### Frameworks and Environment
 
-* Vue.js  - Frontend
-* Node.js - Backend
-* Server  - *Undefined*
-
+* Frontend - Vue.js
+* Backend - Node.js Express web server
+* Server  - AWS EC2 Instance
 * OS - Linux Ubuntu LTS 18.
 
-### Modules
+#### Description 
 
-* Sequelize.js - managing user infos, managing unitni infos etc. related with DB
+* [Vuetify](https://vuetifyjs.com/ko/) - Vue.js material component framework 
+* [Vuex](https://vuex.vuejs.org/) - Vue state management framework
+* Express.js - Web server framework
+* [Sequelize.js](http://docs.sequelizejs.com/) - managing user infos, managing unitni infos etc. related with DB
+
 
 ### How to run
 
@@ -32,6 +35,8 @@ Next, dev mode is
 ```
 npm run dev
 ```
+
+There is no prodduction mode, yet.
 
 #### \unitni\app\server
 This is same as **client** <br>
